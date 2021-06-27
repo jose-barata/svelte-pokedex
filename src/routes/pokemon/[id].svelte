@@ -3,7 +3,13 @@
 	import type { Pokemon } from 'src/models/pokemon.model';
 	import { getPokemonById } from '../../stores/pokestore';
 
-	export async function load(loadInput: LoadInput) {
+	export async function load(
+		loadInput: LoadInput
+	): Promise<{
+		props: {
+			pokemon: Pokemon;
+		};
+	}> {
 		let id = loadInput.page.params.id;
 		const pokemon: Pokemon = await getPokemonById(id);
 		return { props: { pokemon: pokemon } };

@@ -3,7 +3,7 @@
 	import PokemonCard from '../components/pokemonCard.svelte';
 	import { getPokemons, pokemons } from '../stores/pokestore';
 
-	let searchTerm: string = '';
+	let searchTerm = '';
 	let filteredPokemon: Pokemon[] = [];
 	$: {
 		if (searchTerm) {
